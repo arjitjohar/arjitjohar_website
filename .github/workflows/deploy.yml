@@ -19,9 +19,11 @@ jobs:
 
       - name: Install dependencies
         run: npm ci # 'ci' is generally preferred for CI environments
+        working-directory: ./frontend
 
       - name: Build project
         run: npm run build # This should create the 'dist' folder
+        working-directory: ./frontend
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4 # Use the latest version
@@ -31,7 +33,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Deploy to S3
-        run: aws s3 sync ./dist s3://${{ secrets.S3_BUCKET_NAME }} --delete
+        run: aws s3 sync ./frontend/dist s3://${{ secrets.S3_BUCKET_NAME }} --delete
         # The --delete flag removes files from S3 that are not in the ./dist folder
   
       - name: Invalidate CloudFront Cache
