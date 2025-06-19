@@ -1,41 +1,48 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 const Navbar = () => {
-  const activeStyle = {
-    color: '#8B4513', // primary-brown
-    textDecoration: 'underline',
-  };
-
   return (
-    <nav className="bg-primary-green p-4 shadow-md">
+    <nav className="bg-primary-green p-4 shadow-md sticky top-0 z-50">
       <ul className="flex justify-center space-x-8">
         <li>
-          <NavLink 
-            to="/about" 
-            style={({ isActive }) => isActive ? activeStyle : undefined}
-            className="text-background-light hover:text-primary-brown transition-colors duration-300"
+          <Link 
+            to="about" 
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-background-light hover:text-primary-brown transition-colors duration-300 cursor-pointer"
+            activeClass="text-primary-brown"
           >
             About
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink 
-            to="/experiences" 
-            style={({ isActive }) => isActive ? activeStyle : undefined}
-            className="text-background-light hover:text-primary-brown transition-colors duration-300"
+          <Link 
+            to="experiences" 
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-background-light hover:text-primary-brown transition-colors duration-300 cursor-pointer"
+            activeClass="text-primary-brown"
           >
             Experiences
-          </NavLink>
+          </Link>
         </li>
         <li>
-          <NavLink 
-            to="/learning" 
-            style={({ isActive }) => isActive ? activeStyle : undefined}
-            className="text-background-light hover:text-primary-brown transition-colors duration-300"
+          <Link 
+            to="learning" 
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-background-light hover:text-primary-brown transition-colors duration-300 cursor-pointer"
+            activeClass="text-primary-brown"
           >
             Learning
-          </NavLink>
+          </Link>
         </li>
       </ul>
     </nav>
