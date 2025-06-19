@@ -24,7 +24,7 @@ const Learning = () => {
               <h3 className="font-bold text-primary-green mb-2">Core Learnings:</h3>
               <ul className="list-disc list-inside text-content-dark space-y-1">
                 <li>Mastering data structures, algorithms, and the art of writing clean, efficient code.</li>
-                <li>Surviving thermodynamics and linear algebra (a rite of passage for any engineering student!).</li>
+                <li>Surviving electrical circuits and linear algebra (a rite of passage for any engineering student!).</li>
                 <li>Collaborating on team projects, learning that great software is built together.</li>
               </ul>
             </div>
