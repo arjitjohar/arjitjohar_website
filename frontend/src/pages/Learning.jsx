@@ -2,6 +2,9 @@ import React from 'react';
 import awsBadge from '../assets/solution architect associate badge.webp';
 import bergeronCentreImage from '../assets/ZAS-bergeron-108-Edit_2_0-1024x683.jpg';
 import ibmGrcBadge from '../assets/IBM_skills_badges/GCP IBM badge.png';
+import ibmCloudSecurityBadge from '../assets/IBM_skills_badges/cloud security IBM.png';
+import ibmVulnerabilityBadge from '../assets/IBM_skills_badges/vulnerability management IBM.png';
+import ibmNetworkSecurityBadge from '../assets/IBM_skills_badges/system and network security.png';
 
 const Learning = () => {
   return (
@@ -43,7 +46,70 @@ const Learning = () => {
               href="https://www.credly.com/badges/9fca6ddb-cb90-4918-8fe4-5702b1d216be" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block mt-2 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+              className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            >
+              View Credly Badge
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white/60 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12 border border-primary-green/30">
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <img src={ibmCloudSecurityBadge} alt="IBM Cloud Security Badge" className="w-32 h-32" />
+          <div className="flex-1">
+            <h2 className="text-3xl font-bold text-primary-brown mb-3">Cloud Security</h2>
+            <p className="text-sm text-gray-600 mb-4">Issued: June 18, 2025</p>
+            <p className="mb-4">
+              This credential showcases advanced competencies in protecting cloud systems, data, applications, and infrastructure, and applying the right cloud computing framework for an organization’s needs.
+            </p>
+            <a 
+              href="https://www.credly.com/earner/earned/badge/940833fc-2453-4fc2-996f-fdc1b6daf745" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            >
+              View Credly Badge
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white/60 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12 border border-primary-green/30">
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <img src={ibmNetworkSecurityBadge} alt="IBM Systems and Network Security Badge" className="w-32 h-32" />
+          <div className="flex-1">
+            <h2 className="text-3xl font-bold text-primary-brown mb-3">Systems and Network Security</h2>
+            <p className="text-sm text-gray-600 mb-4">Issued: June 02, 2025</p>
+            <p className="mb-4">
+              This credential demonstrates advanced competencies in designing secure networks, securing host operating systems, updating firmware, and enhancing system architectures.
+            </p>
+            <a 
+              href="https://www.credly.com/badges/91ce8f0d-70a4-4b3b-815e-86a487f9f136" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            >
+              View Credly Badge
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-white/60 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12 border border-primary-green/30">
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <img src={ibmVulnerabilityBadge} alt="IBM Vulnerability Management Badge" className="w-32 h-32" />
+          <div className="flex-1">
+            <h2 className="text-3xl font-bold text-primary-brown mb-3">Vulnerability Management</h2>
+            <p className="text-sm text-gray-600 mb-4">Issued: May 23, 2025</p>
+            <p className="mb-4">
+              This credential showcases advanced competencies in applying appropriate controls to vulnerabilities, justifying threat mitigation tactics, and categorizing vulnerabilities by severity.
+            </p>
+            <a 
+              href="https://www.credly.com/earner/earned/badge/8c61b82b-9aeb-4bd7-bb4d-fb5d4a9bd836" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
             >
               View Credly Badge
             </a>
@@ -63,7 +129,7 @@ const Learning = () => {
               href="https://www.credly.com/earner/earned/badge/5d1f45e6-36fb-46c6-87d8-179e66267ee6" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block mt-2 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+              className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
             >
               View Credly Badge
             </a>
