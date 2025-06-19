@@ -34,18 +34,10 @@ jobs:
         run: aws s3 sync ./dist s3://${{ secrets.S3_BUCKET_NAME }} --delete
         # The --delete flag removes files from S3 that are not in the ./dist folder
   
-      - name: Debug Secrets Access
-        run: |
-          echo "Attempting to access AWS_REGION: ${{ secrets.AWS_REGION }}"
-          echo "Attempting to access CLOUDFRONT_DISTRIBUTION_ID: (value will be masked) ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
-          if [[ "${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" != "" ]]; then
-            echo "Shell check: CLOUDFRONT_DISTRIBUTION_ID is not empty."
-          else
-            echo "Shell check: CLOUDFRONT_DISTRIBUTION_ID IS empty or not set."
-          fi
-
       - name: Invalidate CloudFront Cache
-        if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} # Simplified condition
+        if: env.CLOUDFRONT_DISTRIBUTION_ID != ''
+        env:
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
         run: |
-          echo "Invalidation step will run for distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}"
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          echo "Invalidation step will run for distribution: ${{ env.CLOUDFRONT_DISTRIBUTION_ID }}"
+          aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
