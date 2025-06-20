@@ -1,0 +1,60 @@
+import React from 'react';
+
+const Contact = () => {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "2ea3c9dc-50d9-4206-86ee-e822860b5a4a");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
+  return (
+    <div id="contact" className="p-8 text-content-dark">
+      <div className="bg-white/60 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12 border border-primary-green/30">
+        <h1 className="text-4xl font-bold text-primary-green mb-8 text-center">Contact Me</h1>
+        <form onSubmit={onSubmit} className="max-w-lg mx-auto">
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-primary-brown font-bold mb-2">Name</label>
+            <input type="text" name="name" id="name" required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-primary-brown font-bold mb-2">Email</label>
+            <input type="email" name="email" id="email" required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="message" className="block text-primary-brown font-bold mb-2">Message</label>
+            <textarea name="message" id="message" required rows="5" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+          </div>
+          <div className="text-center">
+            <button type="submit" className="bg-primary-green text-black font-bold py-2 px-4 rounded-lg border border-primary-green hover:bg-primary-brown hover:border-primary-brown transition-all duration-300 transform hover:scale-105">
+              Submit Form
+            </button>
+          </div>
+        </form>
+        <div className="text-center mt-4">
+          <span className="text-primary-green">{result}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Contact;
