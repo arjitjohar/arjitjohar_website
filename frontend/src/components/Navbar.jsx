@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 
 const Navbar = () => {
   return (
-    <nav className="bg-primary-green p-4 shadow-md sticky top-0 z-50">
+    <nav className="bg-primary-green/80 backdrop-blur-sm p-4 shadow-md sticky top-0 z-50">
       <ul className="flex justify-center space-x-8">
         <li>
           <Link 
