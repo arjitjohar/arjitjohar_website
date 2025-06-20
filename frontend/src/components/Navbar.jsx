@@ -1,61 +1,52 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const linkClass = "text-[var(--ivory)] hover:text-[var(--keppel)] transition-all duration-300 cursor-pointer transform hover:scale-110";
+  const activeLinkClass = "text-[var(--keppel)]";
+
   return (
-    <nav className="bg-primary-green/80 backdrop-blur-sm p-4 shadow-md sticky top-0 z-50">
-      <ul className="flex justify-center space-x-8">
+    <nav className="bg-[var(--onyx)]/80 backdrop-blur-sm p-4 shadow-md sticky top-0 z-50">
+      <ul className="flex justify-center space-x-8 bg-[var(--steel-blue)]/20 rounded-full px-6 py-2">
         <li>
-          <Link 
-            to="about" 
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="text-background-light hover:text-primary-brown transition-all duration-300 cursor-pointer transform hover:scale-110"
-            activeClass="text-primary-brown"
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => isActive ? `${linkClass} ${activeLinkClass}` : linkClass}
           >
             About
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link 
-            to="experiences" 
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="text-background-light hover:text-primary-brown transition-all duration-300 cursor-pointer transform hover:scale-110"
-            activeClass="text-primary-brown"
+          <NavLink 
+            to="/experiences" 
+            className={({ isActive }) => isActive ? `${linkClass} ${activeLinkClass}` : linkClass}
           >
             Experiences
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link 
-            to="learning" 
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="text-background-light hover:text-primary-brown transition-all duration-300 cursor-pointer transform hover:scale-110"
-            activeClass="text-primary-brown"
+          <NavLink 
+            to="/learning" 
+            className={({ isActive }) => isActive ? `${linkClass} ${activeLinkClass}` : linkClass}
           >
             Learning
-          </Link>
+          </NavLink>
         </li>
-         <li>
-          <Link 
-            to="contact" 
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="text-background-light hover:text-primary-brown transition-all duration-300 cursor-pointer transform hover:scale-110"
-            activeClass="text-primary-brown"
+        <li>
+          <NavLink 
+            to="/contact" 
+            className={({ isActive }) => isActive ? `${linkClass} ${activeLinkClass}` : linkClass}
           >
             Contact
-          </Link>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink 
+            to="/simulations" 
+            className={({ isActive }) => isActive ? `${linkClass} ${activeLinkClass}` : linkClass}
+          >
+            Simulations
+          </NavLink>
         </li>
       </ul>
     </nav>
