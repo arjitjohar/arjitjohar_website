@@ -64,7 +64,7 @@ const Experiences = () => (
             href="https://www.yes.on.ca/yes-queens-park-event-with-honourable-david-piccini-minister-of-labour-labour-immigration-training-skills-development/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-all duration-300 transform hover:scale-105"
           >
             Read About the Event
           </a>
@@ -94,7 +94,7 @@ const Experiences = () => (
             href="https://www.linkedin.com/posts/florianpestoni_intern-activity-7222341438804566016-qmP4?utm_source=share&utm_medium=member_desktop" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-all duration-300 transform hover:scale-105"
           >
             See it on LinkedIn
           </a>
@@ -123,7 +123,7 @@ const Experiences = () => (
             href="https://www.yorku.ca/yfile/2023/03/31/students-win-best-startup-experience-awards-for-innovative-startups/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-all duration-300 transform hover:scale-105"
           >
             Read the Y-File Article
           </a>
@@ -152,7 +152,7 @@ const Experiences = () => (
             href="https://www.inorbit.ai/blog/meet-an-inorbiter-the-interns" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-all duration-300 transform hover:scale-105"
           >
             Meet the Interns
           </a>
@@ -201,7 +201,7 @@ const Learning = () => (
             href="https://www.credly.com/badges/9fca6ddb-cb90-4918-8fe4-5702b1d216be" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-all duration-300 transform hover:scale-105"
           >
             View Credly Badge
           </a>
@@ -222,7 +222,7 @@ const Learning = () => (
             href="https://www.credly.com/earner/earned/badge/940833fc-2453-4fc2-996f-fdc1b6daf745" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-all duration-300 transform hover:scale-105"
           >
             View Credly Badge
           </a>
@@ -243,7 +243,7 @@ const Learning = () => (
             href="https://www.credly.com/badges/91ce8f0d-70a4-4b3b-815e-86a487f9f136" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-all duration-300 transform hover:scale-105"
           >
             View Credly Badge
           </a>
@@ -264,7 +264,7 @@ const Learning = () => (
             href="https://www.credly.com/earner/earned/badge/8c61b82b-9aeb-4bd7-bb4d-fb5d4a9bd836" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-all duration-300 transform hover:scale-105"
           >
             View Credly Badge
           </a>
@@ -284,7 +284,7 @@ const Learning = () => (
             href="https://www.credly.com/earner/earned/badge/5d1f45e6-36fb-46c6-87d8-179e66267ee6" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-all duration-300 transform hover:scale-105"
           >
             View Credly Badge
           </a>

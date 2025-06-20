@@ -12,7 +12,7 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="text-background-light hover:text-primary-brown transition-colors duration-300 cursor-pointer"
+            className="text-background-light hover:text-primary-brown transition-all duration-300 cursor-pointer transform hover:scale-110"
             activeClass="text-primary-brown"
           >
             About
@@ -25,7 +25,7 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="text-background-light hover:text-primary-brown transition-colors duration-300 cursor-pointer"
+            className="text-background-light hover:text-primary-brown transition-all duration-300 cursor-pointer transform hover:scale-110"
             activeClass="text-primary-brown"
           >
             Experiences
@@ -38,10 +38,23 @@ const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="text-background-light hover:text-primary-brown transition-colors duration-300 cursor-pointer"
+            className="text-background-light hover:text-primary-brown transition-all duration-300 cursor-pointer transform hover:scale-110"
             activeClass="text-primary-brown"
           >
             Learning
+          </Link>
+        </li>
+         <li>
+          <Link 
+            to="contact" 
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-background-light hover:text-primary-brown transition-all duration-300 cursor-pointer transform hover:scale-110"
+            activeClass="text-primary-brown"
+          >
+            Contact
           </Link>
         </li>
       </ul>
