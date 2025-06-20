@@ -27,30 +27,30 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="p-8 text-content-dark">
-      <div className="bg-white/60 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12 border border-primary-green/30">
-        <h1 className="text-4xl font-bold text-primary-green mb-8 text-center">Contact Me</h1>
+    <div id="contact" className="p-8 text-[var(--eerie-black)]">
+      <div className="bg-[var(--steel-blue)]/60 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12 border border-[var(--keppel)]/30">
+        <h1 className="text-4xl font-bold text-[var(--eerie-black)] mb-8 text-center">Contact Me</h1>
         <form onSubmit={onSubmit} className="max-w-lg mx-auto">
           <div className="mb-4">
-            <label htmlFor="name" className="block text-primary-brown font-bold mb-2">Name</label>
-            <input type="text" name="name" id="name" required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+            <label htmlFor="name" className="block text-[var(--eerie-black)] font-bold mb-2">Name</label>
+            <input type="text" name="name" id="name" required className="shadow appearance-none border rounded w-full py-2 px-3 text-[var(--eerie-black)] leading-tight focus:outline-none focus:shadow-outline bg-[var(--keppel)]" />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-primary-brown font-bold mb-2">Email</label>
-            <input type="email" name="email" id="email" required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+            <label htmlFor="email" className="block text-[var(--eerie-black)] font-bold mb-2">Email</label>
+            <input type="email" name="email" id="email" required className="shadow appearance-none border rounded w-full py-2 px-3 text-[var(--eerie-black)] leading-tight focus:outline-none focus:shadow-outline bg-[var(--keppel)]" />
           </div>
           <div className="mb-4">
-            <label htmlFor="message" className="block text-primary-brown font-bold mb-2">Message</label>
-            <textarea name="message" id="message" required rows="5" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            <label htmlFor="message" className="block text-[var(--eerie-black)] font-bold mb-2">Message</label>
+            <textarea name="message" id="message" required rows="5" className="shadow appearance-none border rounded w-full py-2 px-3 text-[var(--eerie-black)] leading-tight focus:outline-none focus:shadow-outline bg-[var(--keppel)]"></textarea>
           </div>
           <div className="text-center">
-            <button type="submit" className="bg-primary-green text-black font-bold py-2 px-4 rounded-lg border border-primary-green hover:bg-primary-brown hover:border-primary-brown transition-all duration-300 transform hover:scale-105">
+            <button type="submit" className="bg-[var(--keppel)] text-[var(--eerie-black)] font-bold py-2 px-4 rounded-lg border border-[var(--keppel)] hover:bg-[var(--onyx)] hover:border-[var(--cinnabar)] transition-all duration-300 transform hover:scale-105">
               Submit Form
             </button>
           </div>
         </form>
         <div className="text-center mt-4">
-          <span className="text-primary-green">{result}</span>
+          <span className="text-[var(--eerie-black)]">{result}</span>
         </div>
       </div>
     </div>

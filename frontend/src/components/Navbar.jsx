@@ -2,12 +2,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
-  const linkClass = "text-background-light hover:text-primary-brown transition-all duration-300 cursor-pointer transform hover:scale-110";
-  const activeLinkClass = "text-primary-brown";
+  const linkClass = "text-[var(--ivory)] hover:text-[var(--keppel)] transition-all duration-300 cursor-pointer transform hover:scale-110";
+  const activeLinkClass = "text-[var(--keppel)]";
 
   return (
-    <nav className="bg-primary-green/80 backdrop-blur-sm p-4 shadow-md sticky top-0 z-50">
-      <ul className="flex justify-center space-x-8 bg-black/20 rounded-full px-6 py-2">
+    <nav className="bg-[var(--onyx)]/80 backdrop-blur-sm p-4 shadow-md sticky top-0 z-50">
+      <ul className="flex justify-center space-x-8 bg-[var(--steel-blue)]/20 rounded-full px-6 py-2">
         <li>
           <NavLink 
             to="/" 
