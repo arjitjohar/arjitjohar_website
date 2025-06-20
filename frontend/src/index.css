@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+/* NOTE: COLOR PALLETE NAMES ARE WRONG: https://coolors.co/ccd5ae-e9edc9-fefae0-faedcd-d4a373 */
 --ivory: oklch(0.8500 0.0400 106.80);
+
 --cinnabar: oklch(0.9200 0.0300 97.00);
 --onyx: oklch(0.9700 0.0200 90.00);
 --steel-blue: oklch(0.9400 0.0300 79.00);
