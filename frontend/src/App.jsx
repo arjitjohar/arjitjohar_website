@@ -64,7 +64,7 @@ const Experiences = () => (
             href="https://www.yes.on.ca/yes-queens-park-event-with-honourable-david-piccini-minister-of-labour-labour-immigration-training-skills-development/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-4 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
           >
             Read About the Event
           </a>
@@ -94,7 +94,7 @@ const Experiences = () => (
             href="https://www.linkedin.com/posts/florianpestoni_intern-activity-7222341438804566016-qmP4?utm_source=share&utm_medium=member_desktop" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-4 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
           >
             See it on LinkedIn
           </a>
@@ -123,7 +123,7 @@ const Experiences = () => (
             href="https://www.yorku.ca/yfile/2023/03/31/students-win-best-startup-experience-awards-for-innovative-startups/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-4 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
           >
             Read the Y-File Article
           </a>
@@ -152,7 +152,7 @@ const Experiences = () => (
             href="https://www.inorbit.ai/blog/meet-an-inorbiter-the-interns" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-4 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-4 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
           >
             Meet the Interns
           </a>
@@ -201,7 +201,7 @@ const Learning = () => (
             href="https://www.credly.com/badges/9fca6ddb-cb90-4918-8fe4-5702b1d216be" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-2 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
           >
             View Credly Badge
           </a>
@@ -222,7 +222,7 @@ const Learning = () => (
             href="https://www.credly.com/earner/earned/badge/940833fc-2453-4fc2-996f-fdc1b6daf745" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-2 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
           >
             View Credly Badge
           </a>
@@ -243,7 +243,7 @@ const Learning = () => (
             href="https://www.credly.com/badges/91ce8f0d-70a4-4b3b-815e-86a487f9f136" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-2 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
           >
             View Credly Badge
           </a>
@@ -264,7 +264,7 @@ const Learning = () => (
             href="https://www.credly.com/earner/earned/badge/8c61b82b-9aeb-4bd7-bb4d-fb5d4a9bd836" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-2 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
           >
             View Credly Badge
           </a>
@@ -284,7 +284,7 @@ const Learning = () => (
             href="https://www.credly.com/earner/earned/badge/5d1f45e6-36fb-46c6-87d8-179e66267ee6" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block mt-2 bg-primary-green text-white font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
+            className="inline-block mt-2 bg-primary-green text-black font-bold py-2 px-4 rounded-lg hover:bg-primary-brown transition-colors duration-300"
           >
             View Credly Badge
           </a>
@@ -313,6 +313,63 @@ const Learning = () => (
   </div>
 );
 
+const Contact = () => {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "2ea3c9dc-50d9-4206-86ee-e822860b5a4a");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
+  return (
+    <div id="contact" className="p-8 text-content-dark">
+      <div className="bg-white/60 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12 border border-primary-green/30">
+        <h1 className="text-4xl font-bold text-primary-green mb-8 text-center">Contact Me</h1>
+        <form onSubmit={onSubmit} className="max-w-lg mx-auto">
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-primary-brown font-bold mb-2">Name</label>
+            <input type="text" name="name" id="name" required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-primary-brown font-bold mb-2">Email</label>
+            <input type="email" name="email" id="email" required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="message" className="block text-primary-brown font-bold mb-2">Message</label>
+            <textarea name="message" id="message" required rows="5" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+          </div>
+          <div className="text-center">
+            <button type="submit" className="bg-primary-green text-black font-bold py-2 px-4 rounded-lg border border-primary-green hover:bg-primary-brown hover:border-primary-brown transition-all duration-300 transform hover:scale-105">
+              Submit Form
+            </button>
+          </div>
+        </form>
+        <div className="text-center mt-4">
+          <span className="text-primary-green">{result}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 
 function App() {
@@ -323,6 +380,7 @@ function App() {
         <About />
         <Experiences />
         <Learning />
+        <Contact />
       </main>
     </div>
   );
