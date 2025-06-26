@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
@@ -51,6 +52,20 @@ const Contact = () => {
         </form>
         <div className="text-center mt-4">
           <span className="text-[var(--eerie-black)]">{result}</span>
+        </div>
+        <div className="text-center mt-8">
+          <h2 className="text-2xl font-bold text-[var(--eerie-black)] mb-4">Connect with me</h2>
+          <div className="flex justify-center space-x-6">
+            <a href="https://www.linkedin.com/in/arjitjohar/" target="_blank" rel="noopener noreferrer" className="text-[var(--eerie-black)] hover:text-[var(--keppel)] transition-colors duration-300">
+              <FaLinkedin size={32} />
+            </a>
+            <a href="https://github.com/arjitjohar" target="_blank" rel="noopener noreferrer" className="text-[var(--eerie-black)] hover:text-[var(--keppel)] transition-colors duration-300">
+              <FaGithub size={32} />
+            </a>
+            <a href="mailto:arjitjohar@gmail.com" className="text-[var(--eerie-black)] hover:text-[var(--keppel)] transition-colors duration-300">
+              <FaEnvelope size={32} />
+            </a>
+          </div>
         </div>
       </div>
     </div>
