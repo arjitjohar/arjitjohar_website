@@ -1,6 +1,6 @@
 import React from 'react';
 import goKartingImage from '../assets/arjit_go_karting_pic.JPG';
-import rockClimbingGif from '../assets/rock+climbing+video.gif';
+import rockClimbingGif from '../assets/rock+climbing+video_25.gif';
 const About = () => (
   <div id="about" className="p-8 text-[var(--eerie-black)]">
     <div className="bg-[var(--steel-blue)]/60 backdrop-blur-sm rounded-xl shadow-lg p-8 mb-12 border border-[var(--keppel)]/30">
