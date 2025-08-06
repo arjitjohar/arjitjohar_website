@@ -44,7 +44,7 @@ const Navbar = () => {
             to="/simulations" 
             className={({ isActive }) => isActive ? `${linkClass} ${activeLinkClass}` : linkClass}
           >
-            Simulations
+            Simulations.
           </NavLink>
         </li>
       </ul>
