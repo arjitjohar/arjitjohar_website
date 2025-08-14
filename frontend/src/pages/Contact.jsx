@@ -9,6 +9,7 @@ const Contact = () => {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
+    // migrate api call from react front end to lambda function
     formData.append("access_key", "2ea3c9dc-50d9-4206-86ee-e822860b5a4a");
 
     const response = await fetch("https://api.web3forms.com/submit", {
