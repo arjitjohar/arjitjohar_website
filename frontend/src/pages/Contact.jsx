@@ -1,27 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { useAuth } from '../context/AuthContext';
 
 const Contact = () => {
-  const [result, setResult] = React.useState("");
+  const { user, isLoggedIn } = useAuth();
+  const [result, setResult] = useState("");
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  // Auto-populate email when user is logged in
+  useEffect(() => {
+    if (isLoggedIn && user?.email) {
+      setFormData(prev => ({
+        ...prev,
+        email: user.email
+      }));
+    }
+  }, [isLoggedIn, user]);
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending....");
-    const formData = new FormData(event.target);
-
-    // migrate api call from react front end to lambda function
-    formData.append("access_key", "2ea3c9dc-50d9-4206-86ee-e822860b5a4a");
+    
+    const submitData = new FormData();
+    submitData.append("name", formData.name);
+    submitData.append("email", formData.email);
+    submitData.append("message", formData.message);
+    submitData.append("access_key", "2ea3c9dc-50d9-4206-86ee-e822860b5a4a");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formData
+      body: submitData
     });
 
     const data = await response.json();
 
     if (data.success) {
-      setResult("Form Submitted Successfully test");
-      event.target.reset();
+      setResult("Form Submitted Successfully!");
+      // Reset form but keep email if user is logged in
+      setFormData({
+        name: '',
+        email: isLoggedIn && user?.email ? user.email : '',
+        message: ''
+      });
     } else {
       console.log("Error", data);
       setResult(data.message);
@@ -35,15 +66,41 @@ const Contact = () => {
         <form onSubmit={onSubmit} className="max-w-lg mx-auto">
           <div className="mb-4">
             <label htmlFor="name" className="block text-[var(--eerie-black)] font-bold mb-2">Name</label>
-            <input type="text" name="name" id="name" required className="shadow appearance-none border rounded w-full py-2 px-3 text-[var(--eerie-black)] leading-tight focus:outline-none focus:shadow-outline bg-[var(--keppel)]" />
+            <input 
+              type="text" 
+              name="name" 
+              id="name" 
+              required 
+              value={formData.name}
+              onChange={handleInputChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-[var(--eerie-black)] leading-tight focus:outline-none focus:shadow-outline bg-[var(--keppel)] focus:border-[var(--keppel)]" 
+            />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-[var(--eerie-black)] font-bold mb-2">Email</label>
-            <input type="email" name="email" id="email" required className="shadow appearance-none border rounded w-full py-2 px-3 text-[var(--eerie-black)] leading-tight focus:outline-none focus:shadow-outline bg-[var(--keppel)]" />
+            <label htmlFor="email" className="block text-[var(--eerie-black)] font-bold mb-2">
+              Email {isLoggedIn && <span className="text-sm font-normal text-[var(--keppel)]">(Auto-filled from your account)</span>}
+            </label>
+            <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              required 
+              value={formData.email}
+              onChange={handleInputChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-[var(--eerie-black)] leading-tight focus:outline-none focus:shadow-outline bg-[var(--keppel)] focus:border-[var(--keppel)]" 
+            />
           </div>
           <div className="mb-4">
             <label htmlFor="message" className="block text-[var(--eerie-black)] font-bold mb-2">Message</label>
-            <textarea name="message" id="message" required rows="5" className="shadow appearance-none border rounded w-full py-2 px-3 text-[var(--eerie-black)] leading-tight focus:outline-none focus:shadow-outline bg-[var(--keppel)]"></textarea>
+            <textarea 
+              name="message" 
+              id="message" 
+              required 
+              rows="5" 
+              value={formData.message}
+              onChange={handleInputChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-[var(--eerie-black)] leading-tight focus:outline-none focus:shadow-outline bg-[var(--keppel)] focus:border-[var(--keppel)]"
+            ></textarea>
           </div>
           <div className="text-center">
             <button type="submit" className="bg-[var(--keppel)] text-[var(--eerie-black)] font-bold py-2 px-4 rounded-lg border border-[var(--keppel)] hover:bg-[var(--onyx)] hover:border-[var(--cinnabar)] transition-all duration-300 transform hover:scale-105">
